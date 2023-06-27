@@ -180,7 +180,13 @@ export default function App() {
   };
 
   const renderPose = () => {
+
     if (poses != null && poses.length > 0) {
+
+      poses.forEach((pose) => {
+        console.log(pose)
+      })
+
       const keypoints = poses[0].keypoints
         .filter((k) => (k.score ?? 0) > MIN_KEYPOINT_SCORE)
         .map((k) => {
